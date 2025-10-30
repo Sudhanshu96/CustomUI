@@ -8,11 +8,15 @@
 import Foundation
 import SwiftUI
 
-struct CustomButton: View {
+public struct CustomButton: View {
     
     var action: () -> ()
     
-    var body: some View {
+    public init(action: @escaping () -> Void) {
+        self.action = action
+    }
+    
+    public var body: some View {
         
         Button(action: action,
                label: {
